@@ -1,10 +1,10 @@
 QUESTIONS = [
     {
-        "question": "Hva er en typisk rett å lage med torsk i år 1833?",
+        "question": "Hva er en typisk rett å lage med torsk?",
         "expected_reply": "Torsk og poteter",
     },
     {
-        "question": "Hva er en typisk rett å lage med torsk rundt år 2000?",
-        "expected_reply": "Fisketaco",
+        "question": "Hva er en typisk rett å lage med Taco?",
+        "expected_reply": "Jeg vet ikke",
     },
 ]

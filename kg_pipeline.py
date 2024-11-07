@@ -7,8 +7,8 @@ logging.info('Starting the data pipeline...')
 
 # Get list of PDF files from 'files' folder
 logging.info('Getting list of PDF files from "files" folder')
-files_path = 'files'
-files = [files_path+'/'+file for file in os.listdir(files_path) if file.endswith('.pdf')]
+files_path = 'data'
+files = [files_path+'/'+file for file in os.listdir(files_path) if file.endswith('.md')]
 logging.info(f'List of PDF files: {files}')
 
 # Instantiate the token text splitter
@@ -25,7 +25,7 @@ documents = []
 
 for file in files:
     # Load the PDF file
-    text_loader = TextLoader(file_path=file, extract_images=False)
+    text_loader = TextLoader(file_path=file)
     # Split the PDF into Documents
     files_documents = text_loader.load_and_split(text_splitter=splitter)
     # Add the Documents to the list

@@ -38,7 +38,8 @@ allow_dangerous_requests: bool = True
 
 # The pipeline
 
-pipeline.py -> main script to run the pipeline.
+kg_pipeline.py -> main script to prep KG RAG.
+rag_pipeline.py -> main script to prep RAG.
 
 1) It extracts text from PDFs in the `files` folder.
 2) Sends the text to the local LLM to extract entities and relationships.

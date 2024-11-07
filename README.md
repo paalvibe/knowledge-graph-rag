@@ -22,6 +22,20 @@ NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=neo4j
 ```
 
+### Troubleshooting `allow_dangerous_requests`
+
+```
+knowledge-graph-rag-GUOKPymZ/lib/python3.11/site-packages/langchain_community/chains/graph_qa/cypher.py", line 202, in __init__
+    raise ValueError(
+ValueError: In order to use this chain, you must acknowledge that it can make dangerous requests by setting `allow_dangerous_requests` to `True`.You must narrowly scope the permissions of the database connection to only include necessary permissions. Failure to do so may result in data corruption or loss or reading sensitive data if such data is present in the database.Only use this chain if you understand the risks and have taken the necessary precautions. See https://python.langchain.com/docs/security for more information.
+```
+
+Ugly fix: edit the the cypher.py file ./lib/python3.11/site-packages/langchain_community/chains/graph_qa/cypher.py and change line 183 from False to True:
+
+``````python
+allow_dangerous_requests: bool = True
+``````
+
 # The pipeline
 
 pipeline.py -> main script to run the pipeline.

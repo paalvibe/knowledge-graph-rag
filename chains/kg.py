@@ -20,7 +20,9 @@ class KG(QueryChain):
 
         # Instantiate LLM to use with the Graph RAG
         logging.info('Instantiating LLM to use with the LLMGraphTransformer')
-        llm = Ollama(model='llama3', temperature=0.0)
+        # llm = Ollama(model='llama3', temperature=0.0)
+        llm = Ollama(model='llama3.1', temperature=0.0)
+        # llm = Ollama(model='gemma2', temperature=0.0)
 
         # Instantiate the langchain Graph RAG with the Neo4J connector and the LLM
         self.chain = GraphCypherQAChain.from_llm(graph=graph, llm=llm, verbose=True)
